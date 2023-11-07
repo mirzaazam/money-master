@@ -34,7 +34,19 @@ function calculate() {
 }
 
 document.getElementById('calculate-btn').addEventListener('click', function () {
-    calculate();
+    const foodValue = getValueFromInputField('food-field');
+    const rentValue = getValueFromInputField('rent-field');
+    const clothesValue = getValueFromInputField('Clothes-field');
+    const incomeValue = getValueFromInputField('income-field');
+
+    if (isNaN(foodValue, rentValue, clothesValue, incomeValue)){
+        alert('Invalid type or write a number!');
+
+    }
+    else{
+        calculate();
+    }
+
 });
 
 document.getElementById('save-btn').addEventListener('click', function(){
@@ -52,5 +64,4 @@ document.getElementById('save-btn').addEventListener('click', function(){
 
     const totalRemaining = mainBalanceValue + saveingAmmountValue;
     remainingBalance.innerText = totalRemaining;
-    
 });
