@@ -19,7 +19,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                        <img class="w-100" src="./image/bangladesh-taka-cash-money-1.webp" alt="">
+                        <img class="w-100" src="./image/money_dollar" alt="">
                     </div>
                     <div class="col bg-secondary-subtle p-5">
                         <h5 class="text-center text-primary">Income</h5>
@@ -27,7 +27,8 @@
                         <div class="mb-3 row justify-content-center">
                             <label for="inputPassword" class="col-sm-2 col-form-label fw-semibold">Income:</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="inputPassword">
+                                <input id="income-field" type="text" class="form-control fw-semibold" id="inputPassword">
+
                             </div>
                         </div>
 
@@ -36,33 +37,34 @@
                         <div class="mb-3 row justify-content-center">
                             <label for="inputPassword" class="col-sm-2 col-form-label fw-semibold">Food:</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="inputPassword">
+                                <input id="food-field" type="text" class="form-control fw-semibold" id="inputPassword">
                             </div>
                         </div>
                         <div class="mb-3 row justify-content-center">
                             <label for="inputPassword" class="col-sm-2 col-form-label fw-semibold">Rent:</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="inputPassword">
+                                <input id="rent-field" type="text" class="form-control fw-semibold" id="inputPassword">
                             </div>
                         </div>
                         <div class="mb-3 row justify-content-center">
                             <label for="inputPassword" class="col-sm-2 col-form-label fw-semibold">Clothes:</label>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" id="inputPassword">
+                                <input id="Clothes-field" type="text" class="form-control fw-semibold" id="inputPassword">
                             </div>
                         </div>
 
-                        <div class="text-center"><button class="btn btn-primary">Calculate</button>
+                        <div id="calculate-btn" class="text-center"><button class="btn btn-primary">Calculate</button>
                         </div>
 
-                        <h5 class="text-center mt-3">Total Expenses: <span>0</span></h5>
+                        <h5 class="text-center mt-3">Total Expenses: <span id="total-expenses">0</span></h5>
                         <h5 class="text-center">Balance: <span>0</span></h5>
 
                         <div class="row justify-content-center align-items-center mt-5">
-                            <label for="inputPassword" class="col-sm-2 col-form-label fw-semibold text-center">Save:</label>
+                            <label for="inputPassword"
+                                class="col-sm-2 col-form-label fw-semibold text-center">Save:</label>
                             <div class="col-sm-3">
-                                <input type="text" class="form-control" id="inputPassword">
-                            </div> 
+                                <input type="text" class="form-control fw-semibold" id="inputPassword">
+                            </div>
                             <div class="col-1">
                                 <span>%</span>
                             </div>
@@ -70,6 +72,8 @@
                                 <button class="btn btn-primary px-4">Save</button>
                             </div>
                         </div>
+                        <h5 class="text-center mt-3">Saving Amount: <span>0</span></h5>
+                        <h5 class="text-center">Remaining Balance: <span>0</span></h5>
                     </div>
 
                 </div>
@@ -79,6 +83,7 @@
 
 
     <script src="./bootstrap/js/bootstrap.min.js"></script>
+    <script src="./js/calculate.js"></script>
 </body>
 
 </html>
