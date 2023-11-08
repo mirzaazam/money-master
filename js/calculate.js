@@ -40,9 +40,9 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
     const incomeValue = getValueFromInputField('income-field');
 
     if (incomeValue > foodValue && incomeValue > rentValue && incomeValue > clothesValue) {
+
         if (isNaN(foodValue, rentValue, clothesValue, incomeValue)) {
             alert('Invalid type or write a number!');
-
         }
 
         else {
@@ -71,14 +71,22 @@ document.getElementById('save-btn').addEventListener('click', function () {
     const totalExpenses = getTextFromInnerText('total-expenses');
     const discountField = getValueFromInputField('discount-field');
 
-    if (isNaN(discountField)) {
-        alert('Please type valid!')
-    }
-    else {
-        const saveingAmmountValue = totalExpenses * discountField / 100;
-        saveAmmount.innerText = saveingAmmountValue;
+    if (0 < discountField) {
 
-        const totalRemaining = mainBalanceValue + saveingAmmountValue;
-        remainingBalance.innerText = totalRemaining;
+        if (isNaN(discountField)) {
+            alert('Please type valid!')
+        }
+        else {
+            const saveingAmmountValue = totalExpenses * discountField / 100;
+            saveAmmount.innerText = saveingAmmountValue;
+
+            const totalRemaining = mainBalanceValue + saveingAmmountValue;
+            remainingBalance.innerText = totalRemaining;
+        }
     }
+
+    else {
+        alert('Invalid Number!')
+    }
+
 });
