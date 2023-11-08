@@ -39,21 +39,26 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
     const clothesValue = getValueFromInputField('Clothes-field');
     const incomeValue = getValueFromInputField('income-field');
 
+    if (incomeValue > foodValue && incomeValue > rentValue && incomeValue > clothesValue) {
+        if (isNaN(foodValue, rentValue, clothesValue, incomeValue)) {
+            alert('Invalid type or write a number!');
 
-
-    if (isNaN(foodValue, rentValue, clothesValue, incomeValue)) {
-        alert('Invalid type or write a number!');
-
-    }
-
-    else {
-        if (0 < foodValue && 0 < rentValue && 0 < clothesValue && 0 < incomeValue) {
-            calculate();
         }
+
         else {
-            alert('Nagetive number is not allow!');
+            if (0 <= foodValue && 0 <= rentValue && 0 <= clothesValue && 0 <= incomeValue) {
+                calculate();
+            }
+            else {
+                alert('Nagetive number is not allow!');
+            }
         }
     }
+    else {
+        alert('insuficient balance!')
+    }
+
+
 
 });
 
