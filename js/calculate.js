@@ -25,11 +25,11 @@ function calculate() {
     const balance = document.getElementById('balance');
 
     const expensesCalculate = foodValue + rentValue + clothesValue;
-    const totalExpensesBalance =  totalExpenses.innerText = expensesCalculate;
-    
+    const totalExpensesBalance = totalExpenses.innerText = expensesCalculate;
+
     const dueBalance = incomeValue - expensesCalculate;
     const mainBalance = balance.innerText = dueBalance;
-    
+
     return mainBalance, totalExpensesBalance;
 }
 
@@ -39,29 +39,41 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
     const clothesValue = getValueFromInputField('Clothes-field');
     const incomeValue = getValueFromInputField('income-field');
 
-    if (isNaN(foodValue, rentValue, clothesValue, incomeValue)){
+
+
+    if (isNaN(foodValue, rentValue, clothesValue, incomeValue)) {
         alert('Invalid type or write a number!');
 
     }
-    else{
-        calculate();
+
+    else {
+        if (0 < foodValue && 0 < rentValue && 0 < clothesValue && 0 < incomeValue) {
+            calculate();
+        }
+        else {
+            alert('Nagetive number is not allow!');
+        }
     }
 
 });
 
-document.getElementById('save-btn').addEventListener('click', function(){
+document.getElementById('save-btn').addEventListener('click', function () {
 
     const saveAmmount = document.getElementById('save-ammount');
     const remainingBalance = document.getElementById('remaining-balance');
 
     const mainBalanceValue = getTextFromInnerText('balance');
     const totalExpenses = getTextFromInnerText('total-expenses');
-    
-    
     const discountField = getValueFromInputField('discount-field');
-    const saveingAmmountValue = totalExpenses * discountField / 100;
-    saveAmmount.innerText = saveingAmmountValue;
 
-    const totalRemaining = mainBalanceValue + saveingAmmountValue;
-    remainingBalance.innerText = totalRemaining;
+    if (isNaN(discountField)) {
+        alert('Please type valid!')
+    }
+    else {
+        const saveingAmmountValue = totalExpenses * discountField / 100;
+        saveAmmount.innerText = saveingAmmountValue;
+
+        const totalRemaining = mainBalanceValue + saveingAmmountValue;
+        remainingBalance.innerText = totalRemaining;
+    }
 });
